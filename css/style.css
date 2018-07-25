@@ -1,0 +1,64 @@
+/* Обертка для модального окна */
+.modaloverlay {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.8);
+	transition: visibility 0s, opacity 0.1s linear;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	z-index: -1;
+}
+
+/* Переход к целевому элементу */
+.modaloverlay:target {
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+	z-index: 99999;
+}
+
+/* Модальное окно */
+.modaloverlay .modal {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	overflow-y: auto;
+	background-color: white;
+	padding: 1.5em;
+	/* Плавный скролл для iOS */
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Контрольная точка для desktop-устройств */
+@media (min-width: 60em) {
+	.modaloverlay .modal {
+		margin: 20px;
+	}
+}
+
+/* Кнопка закрытия модального окна */
+.modaloverlay .modal .close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: #ffffff;
+	color: #47a8e4;
+	padding: 2px 15px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 3.5em;
+	line-height: 1;
+	z-index: 1;
+}
+
+/* Наведение на кнопку закрытия модального окна */
+.modaloverlay .modal .close:hover {
+	color: #2891d2;
+}
