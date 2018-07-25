@@ -1,1 +1,2 @@
-# ResponsiveModalWindowByClick
+# Адаптивное модальное окно
+Адаптивное модальное окно на чистом CSS без использования JavaScript.
